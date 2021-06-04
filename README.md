@@ -54,3 +54,13 @@ All examples are available on the Svelte REPL - feel free to play with them!
 * [Device.isXXX](https://svelte.dev/repl/f8227376829d46e9bedeb9d9a1dacdb2) - DeviceIsMobile, DeviceIsPhone, DeviceIsTablet
 * [Device.PointingAccuracy](https://svelte.dev/repl/24578e134a68443da9dc84adf3ae729b) - including observation at run-time
 
+### Background Information ###
+
+This package determines a few often needed details of the underlying device running a given JavaScript application:
+
+* is the device a mobile one? a smartphone? a tablet?
+* is the device's primary input device a touch pad or touch screen? does that input device have a low or a high resolution?
+
+In addition, the package informs the application about any change in touch input resolution (which is important for "convertibles" that may switch between notebook and tablet mode)
+
+The package's finding may either be retrieved using JavaScript or by styling a few CSS classes which are added to or removed from the document body depending on the current PointingAccuracy.
