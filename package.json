@@ -1,0 +1,27 @@
+{
+  "name": "svelte-device-info",
+  "version": "0.1.0",
+  "description": "informs about a device's form factor and pointing accuracy",
+  "main": "svelte-device-info.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rozek/svelte-device-info.git"
+  },
+  "keywords": [
+    "mobile",
+    "phone",
+    "tablet",
+    "media",
+    "query",
+    "pointer"
+  ],
+  "author": "Andreas Rozek <a.rozek@gmx.de> (https://www.rozek.de/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rozek/svelte-device-info/issues"
+  },
+  "homepage": "https://github.com/rozek/svelte-device-info#readme"
+}
