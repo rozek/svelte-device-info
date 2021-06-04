@@ -14,36 +14,32 @@ npm install svelte-device-info
 
 ```
 <script>
-  import { DeviceIsMobile } from 'svelte-device-info'
-  console.log('this device is ' + (DeviceIsMobile ? '' : 'not') + ' mobile')
+  import Device from 'svelte-device-info'
   
-  import { DeviceIsPhone, DeviceIsTablet } from 'svelte-device-info'
+  console.log('this device is ' + (Device.isMobile ? '' : 'not') + ' mobile')
+  
   switch (true) {
-    case DeviceIsPhone:  console.log('this device is a smartphone'); break
-    case DeviceIsTablet: console.log('this device is a table'); break
-    default:             console.log('this device is neither a smartphone nor a tablet')
+    case Device.isPhone:  console.log('this device is a smartphone'); break
+    case Device.isTablet: console.log('this device is a table');      break
+    default:              console.log('this device is neither a smartphone nor a tablet')
   }
   
-  import { DevicePointingAccuracy } from 'svelte-device-info'
-  switch (DevicePointingAccuracy) {
+  switch (Device.PointingAccuracy) {
     case 'none':   console.log('this device does not support any touch input'); break
     case 'fine':   console.log('this device has a high-resolution touch input'); break
     case 'coarse': console.log('this device has a low-resolution touch input')
   }
   
 /**** convertibles may change their DevicePointingAccuracy at any time! ****/
-
-  import { onDevicePointingAccuracyChanged, offDevicePointingAccuracyChanged } from 'svelte-device-info'
   
   let PointingAccuracyObserver = function (newAccuracy) {
     console.log('this device\'s PointingAccuracy is now "' + newAccuracy + '"')
   }
   
-  onDevicePointingAccuracyChanged(PointingAccuracyObserver) // may run multiple times
-  offDevicePointingAccuracyChanged(PointingAccuracyObserver)   // deregisters handler
+  Device.onPointingAccuracyChanged(PointingAccuracyObserver) // may run multiple times
+  Device.offPointingAccuracyChanged(PointingAccuracyObserver)   // deregisters handler
 
-  import { onceDevicePointingAccuracyChanged } from 'svelte-device-info'
-  onceDevicePointingAccuracyChanged((newAccuracy) => {
+  Device.oncePointingAccuracyChanged((newAccuracy) => {
     console.log('PointingAccuracy has changed to "' + newAccuracy + '"')
   })
 </script>
@@ -53,6 +49,6 @@ npm install svelte-device-info
 
 All examples are available on the Svelte REPL - feel free to play with them!
 
-* [DeviceIsXXX]() - DeviceIsMobile, DeviceIsPhone, DeviceIsTablet
-* [DevicePointingAccuracy]() - including observation at run-time
+* [Device.isXXX]() - DeviceIsMobile, DeviceIsPhone, DeviceIsTablet
+* [Device.PointingAccuracy]() - including observation at run-time
 
