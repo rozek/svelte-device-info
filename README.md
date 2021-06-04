@@ -30,7 +30,7 @@ npm install svelte-device-info
     case 'coarse': console.log('this device has a low-resolution touch input')
   }
   
-/**** convertibles may change their DevicePointingAccuracy at any time! ****/
+/**** convertibles may change their PointingAccuracy at any time! ****/
   
   let PointingAccuracyObserver = function (newAccuracy) {
     console.log('this device\'s PointingAccuracy is now "' + newAccuracy + '"')
