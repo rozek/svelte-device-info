@@ -51,6 +51,6 @@ npm install svelte-device-info
 
 All examples are available on the Svelte REPL - feel free to play with them!
 
-* [Device.isXXX]() - DeviceIsMobile, DeviceIsPhone, DeviceIsTablet
-* [Device.PointingAccuracy]() - including observation at run-time
+* [Device.isXXX](https://svelte.dev/repl/f8227376829d46e9bedeb9d9a1dacdb2) - DeviceIsMobile, DeviceIsPhone, DeviceIsTablet
+* [Device.PointingAccuracy](https://svelte.dev/repl/24578e134a68443da9dc84adf3ae729b) - including observation at run-time
 
