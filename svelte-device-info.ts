@@ -222,6 +222,6 @@
     oncePointingAccuracyChanged,
     offPointingAccuracyChanged,
 
-    get DevicePointingAccuracyIsObserved () { return (AccuracyPoller != null) }
+    get observesPointingAccuracy () { return (AccuracyPoller != null) }
   }
 

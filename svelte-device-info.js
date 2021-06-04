@@ -172,7 +172,7 @@ var svelteDeviceInfo = {
     onPointingAccuracyChanged: onPointingAccuracyChanged,
     oncePointingAccuracyChanged: oncePointingAccuracyChanged,
     offPointingAccuracyChanged: offPointingAccuracyChanged,
-    get DevicePointingAccuracyIsObserved() { return (AccuracyPoller != null); }
+    get observesPointingAccuracy() { return (AccuracyPoller != null); }
 };
 
 module.exports = svelteDeviceInfo;
