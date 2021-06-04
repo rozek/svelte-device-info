@@ -64,3 +64,31 @@ This package determines a few often needed details of the underlying device runn
 In addition, the package informs the application about any change in touch input resolution (which is important for "convertibles" that may switch between notebook and tablet mode)
 
 The package's finding may either be retrieved using JavaScript or by styling a few CSS classes which are added to or removed from the document body depending on the current PointingAccuracy.
+
+#### JavaScript API ####
+
+This package offers a JavaScript `default` export, which may be imported as follows
+
+  `import Device from 'svelte-device-info'`
+
+With such an import, the JavaScript API can be used as follows:
+
+* `Device.isMobile` - is `true` if the underlying device is a mobile one (or `false` otherwise)
+* `Device.isPhone` - is `true` if the underlying device is a smartphone one (or `false` otherwise)
+* `Device.isTablet` - is `true` if the underlying device is a tablet one (or `false` otherwise)<br>&nbsp;<br>
+* `Device.PointingAccuracy` - determines the current pointing accuracy of the undelying input device
+  * `none` - indicates the absence of any touch input device
+  * `fine` - indicates the presence of a high-resolution touch input device
+  * `coarse` - indicates the presence of a low-resolution touch input device<br>&nbsp;<br>
+* `Device.onPointingAccuracyChanged(callback)` - installs a `callback` function which is automatically invoked, whenever the device's `PointingAccuracy` has changed
+* `Device.oncePointingAccuracyChanged(callback)` - installs a `callback` function which is automatically invoked *once*, when the device's PointingAccuracy has changed
+* `Device.offPointingAccuracyChanged(callback)` - uninstalls a previously installed `callback` function<br>&nbsp;<br>
+* `Device.observesPointingAccuracy` - is `true` while there is at least one `callback` function observing the current `PointingAccuracy` (or `false` otherwise)
+
+#### CSS classes ####
+
+The following CSS classes are added to `document.body` depending on the current `PoiningAccuracy`
+
+* `noPointer` - indicates the absence of any touch input device
+* `finePointer` - indicates the presence of a high-resolution touch input device
+* `coarsePointer` - indicates the presence of a low-resolution touch input device
