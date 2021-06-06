@@ -74,7 +74,7 @@ This package offers a JavaScript `default` export, which may be imported as foll
 With such an import, the JavaScript API can be used as follows:
 
 * `Device.isMobile` - is `true` if the underlying device is a mobile one (or `false` otherwise)
-* `Device.isPhone` - is `true` if the underlying device is a smartphone one (or `false` otherwise)
+* `Device.isPhone` - is `true` if the underlying device is a smartphone (or `false` otherwise)
 * `Device.isTablet` - is `true` if the underlying device is a tablet (or `false` otherwise)<br>&nbsp;<br>
 * `Device.PointingAccuracy` - determines the current pointing accuracy of the undelying input device
   * `none` - indicates the absence of any touch input device
