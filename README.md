@@ -85,7 +85,7 @@ With such an import, the JavaScript API can be used as follows:
 * `Device.offPointingAccuracyChanged(callback)` - uninstalls a previously installed `callback` function<br>&nbsp;<br>
 * `Device.observesPointingAccuracy` - is `true` while there is at least one `callback` function observing the current `PointingAccuracy` (or `false` otherwise)
 
-#### CSS classes ####
+#### CSS Classes ####
 
 The following CSS classes are added to `document.body` depending on the current `PoiningAccuracy`
 
