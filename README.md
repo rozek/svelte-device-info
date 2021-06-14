@@ -1,6 +1,6 @@
 # svelte-device-info #
 
-informs about a device's form factor and pointing accuracy
+informs about a device's form factor and pointing accuracy (not only in Svelte)
 
 **NPM users**: please consider the [Github README](https://github.com/rozek/svelte-device-info/blob/main/README.md) for the latest description of this package (as updating the docs would otherwise always require a new NPM package version)
 
@@ -8,11 +8,29 @@ Note: Microsoft Internet Explorer and Microsoft Edge (classic) are NOT supported
 
 ### Installation ###
 
+svelte-device-info may be used as an ESM, CommonJS or AMD module or from a global variable.
+
+You may either install the package into your build environment
+
 ```
 npm install svelte-device-info
 ```
 
-### Usage ###
+or load the plain script file directly
+
+<script src="https://unpkg.com/svelte-device-info"></script>
+
+### Access ###
+
+How to access the package depends on the type of module you prefer
+
+* ESM: import Device from 'svelte-device-info'
+* CommonJS: const Device = require('svelte-device-info')
+* AMD: require(['svelte-device-info'], (Device) => {...})
+
+Alternatively, you may access the global Variable `Device` directly.
+
+### Usage within Svelte ###
 
 ```
 <script>
@@ -46,6 +64,10 @@ npm install svelte-device-info
   })
 </script>
 ```
+
+### Usage in other Environments than Svelte ###
+
+(t.b.d)
 
 ### Examples ###
 
