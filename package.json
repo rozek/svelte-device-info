@@ -1,6 +1,6 @@
 {
   "name": "svelte-device-info",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "informs about a device's form factor and pointing accuracy",
   "main": "svelte-device-info.js",
   "scripts": {
