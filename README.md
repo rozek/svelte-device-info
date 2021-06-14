@@ -69,7 +69,47 @@ Alternatively, you may access the global Variable `Device` directly.
 
 ### Usage in other Environments than Svelte ###
 
-(t.b.d)
+When used in another environment than Svelte, please note, that pointing accuracy is only available when the document.readyState is either 'interactive' or 'complete'. As a consequence, you should make sure, that the document has been fully loaded, e.g., using
+
+```
+  function Example () {
+    console.log('this device is ' + (Device.isMobile ? '' : 'not') + ' mobile')
+  
+    switch (true) {
+      case Device.isPhone:  console.log('this device is a smartphone'); break
+      case Device.isTablet: console.log('this device is a table');      break
+      default:              console.log('this device is neither a smartphone nor a tablet')
+    }
+  
+    switch (Device.PointingAccuracy) {
+      case 'none':   console.log('this device does not support any touch input'); break
+      case 'fine':   console.log('this device has a high-resolution touch input'); break
+      case 'coarse': console.log('this device has a low-resolution touch input')
+    }
+  
+  /**** convertibles may change their PointingAccuracy at any time! ****/
+  
+    let PointingAccuracyObserver = function (newAccuracy) {
+      console.log('this device\'s PointingAccuracy is now "' + newAccuracy + '"')
+    }
+  
+    Device.onPointingAccuracyChanged(PointingAccuracyObserver) // may run multiple times
+    Device.offPointingAccuracyChanged(PointingAccuracyObserver)   // deregisters handler
+
+    Device.oncePointingAccuracyChanged((newAccuracy) => {
+      console.log('PointingAccuracy has changed to "' + newAccuracy + '"')
+    })
+  }
+
+  if (
+    (document.readyState === 'interactive') ||
+    (document.readyState === 'complete')
+  ) {
+    Example()
+  } else {
+    window.addEventListener('DOMContentLoaded', Example)
+  }
+```
 
 ### Examples ###
 
