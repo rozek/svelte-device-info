@@ -69,7 +69,14 @@
     }
   }
 
-  updateDevicePointingAccuracy()
+  if (
+    (document.readyState === 'interactive') ||
+    (document.readyState === 'complete')
+  ) {
+    updateDevicePointingAccuracy()
+  } else {
+    window.addEventListener('DOMContentLoaded', updateDevicePointingAccuracy)
+  }
 
 /**** Event Handler Registry ****/
 
