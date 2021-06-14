@@ -18,15 +18,17 @@ npm install svelte-device-info
 
 or load the plain script file directly
 
+```
 <script src="https://unpkg.com/svelte-device-info"></script>
+```
 
 ### Access ###
 
 How to access the package depends on the type of module you prefer
 
-* ESM: import Device from 'svelte-device-info'
-* CommonJS: const Device = require('svelte-device-info')
-* AMD: require(['svelte-device-info'], (Device) => {...})
+* ESM: `import Device from 'svelte-device-info'`
+* CommonJS: `const Device = require('svelte-device-info')`
+* AMD: `require(['svelte-device-info'], (Device) => {...})`
 
 Alternatively, you may access the global Variable `Device` directly.
 
