@@ -69,7 +69,7 @@ Alternatively, you may access the global Variable `Device` directly.
 
 ### Usage in other Environments than Svelte ###
 
-When used in another environment than Svelte, please note, that pointing accuracy is only available when the document.readyState is either 'interactive' or 'complete'. As a consequence, you should make sure, that the document has been fully loaded, e.g., using
+When used in another environment than Svelte, please note, that pointing accuracy is only available when the `document.readyState` is either `'interactive'` or `'complete'`. As a consequence, you should make sure, that the document has been fully loaded, e.g., using
 
 ```
   function Example () {
