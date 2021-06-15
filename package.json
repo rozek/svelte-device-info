@@ -3,6 +3,11 @@
   "version": "0.1.4",
   "description": "informs about a device's form factor and pointing accuracy",
   "main": "svelte-device-info.js",
+  "module": "./svelte-device-info.esm.js",
+  "exports": {
+    "require":"./svelte-device-info.js",
+    "import": "./svelte-device-info.esm.js"
+  },
   "scripts": {
     "build": "rimraf dist && tsc && rollup -c rollup.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,6 +31,8 @@
   },
   "homepage": "https://github.com/rozek/svelte-device-info#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-typescript": "^8.2.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.50.6",
