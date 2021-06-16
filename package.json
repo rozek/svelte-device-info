@@ -9,7 +9,7 @@
     "import": "./dist/svelte-device-info.esm.js"
   },
   "scripts": {
-    "build": "rimraf dist && tsc && rollup -c rollup.config.js",
+    "build": "rimraf dist && tsc && rollup -c rollup.config.js && mv src/*.js src/*.d.ts dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
