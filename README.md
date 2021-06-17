@@ -42,7 +42,7 @@ Alternatively, you may access the global Variable `Device` directly.
   
   switch (true) {
     case Device.isPhone:  console.log('this device is a smartphone'); break
-    case Device.isTablet: console.log('this device is a table');      break
+    case Device.isTablet: console.log('this device is a tablet');     break
     default:              console.log('this device is neither a smartphone nor a tablet')
   }
   
@@ -69,15 +69,14 @@ Alternatively, you may access the global Variable `Device` directly.
 
 ### Usage in other Environments than Svelte ###
 
-When used in another environment than Svelte, please note, that pointing accuracy is only available when the `document.readyState` is either `'interactive'` or `'complete'`. As a consequence, you should make sure, that the document has been fully loaded, e.g., using
+Let's assume that you already "required" or "imported" (or simply loaded) the module according to your local environment. In that case, you may use it as follows:
 
 ```
-function Example () {
   console.log('this device is ' + (Device.isMobile ? '' : 'not') + ' mobile')
   
   switch (true) {
     case Device.isPhone:  console.log('this device is a smartphone'); break
-    case Device.isTablet: console.log('this device is a table');      break
+    case Device.isTablet: console.log('this device is a tablet');     break
     default:              console.log('this device is neither a smartphone nor a tablet')
   }
   
@@ -99,16 +98,6 @@ function Example () {
   Device.oncePointingAccuracyChanged((newAccuracy) => {
     console.log('PointingAccuracy has changed to "' + newAccuracy + '"')
   })
-}
-
-if (
-  (document.readyState === 'interactive') ||
-  (document.readyState === 'complete')
-) {
-  Example()
-} else {
-  window.addEventListener('DOMContentLoaded', Example)
-}
 ```
 
 ### Examples ###
