@@ -21,6 +21,10 @@ var MediaMatcher = (window.matchMedia ||
 function MediaQuery(Query) {
     return (MediaMatcher != null) && MediaMatcher(Query).matches;
 }
+function DocumentIsReady() {
+    return ((document.readyState === 'interactive') ||
+        (document.readyState === 'complete'));
+}
 /**** touch device without support for "pointer:coarse"? ****/
 var AppRunsOnLegacyTouchDevice = (!MediaQuery('(pointer:fine)') &&
     !MediaQuery('(pointer:coarse)') && !MediaQuery('-moz-touch-enabled') &&
@@ -40,26 +44,25 @@ function updateDevicePointingAccuracy() {
             break;
     }
     DevicePointingAccuracy = updatedPointingAccuracy;
-    document.body.classList.remove('noPointer', 'finePointer', 'coarsePointer');
-    switch (updatedPointingAccuracy) {
-        case 'none':
-            document.body.classList.add('noPointer');
-            break;
-        case 'fine':
-            document.body.classList.add('finePointer');
-            break;
-        case 'coarse':
-            document.body.classList.add('coarsePointer');
-            break;
+    if (DocumentIsReady()) {
+        document.body.classList.remove('noPointer', 'finePointer', 'coarsePointer');
+        switch (updatedPointingAccuracy) {
+            case 'none':
+                document.body.classList.add('noPointer');
+                break;
+            case 'fine':
+                document.body.classList.add('finePointer');
+                break;
+            case 'coarse':
+                document.body.classList.add('coarsePointer');
+                break;
+        }
     }
 }
-if ((document.readyState === 'interactive') ||
-    (document.readyState === 'complete')) {
-    updateDevicePointingAccuracy();
-}
-else {
+updateDevicePointingAccuracy();
+if (!DocumentIsReady()) {
     window.addEventListener('DOMContentLoaded', updateDevicePointingAccuracy);
-}
+} // after document is loaded, classes will be applied as foreseen
 var EventHandlerRegistry = [];
 /**** registerHandler ****/
 function registerHandler(Handler, onceOnly) {
