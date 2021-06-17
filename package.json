@@ -20,9 +20,8 @@
     "mobile",
     "phone",
     "tablet",
-    "media",
-    "query",
-    "pointer"
+    "form-factor",
+    "resolution-touch"
   ],
   "author": "Andreas Rozek <a.rozek@gmx.de> (https://www.rozek.de/)",
   "license": "MIT",
