@@ -72,7 +72,6 @@ Alternatively, you may access the global Variable `Device` directly.
 Let's assume that you already "required" or "imported" (or simply loaded) the module according to your local environment. In that case, you may use it as follows:
 
 ```
-<script>
   console.log('this device is ' + (Device.isMobile ? '' : 'not') + ' mobile')
   
   switch (true) {
@@ -99,7 +98,6 @@ Let's assume that you already "required" or "imported" (or simply loaded) the mo
   Device.oncePointingAccuracyChanged((newAccuracy) => {
     console.log('PointingAccuracy has changed to "' + newAccuracy + '"')
   })
-</script>
 ```
 
 ### Examples ###
