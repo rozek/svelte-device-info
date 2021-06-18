@@ -32,7 +32,7 @@ How to access the package depends on the type of module you prefer
 
 Alternatively, you may access the global Variable `Device` directly.
 
-### Usage within Svelte ###
+### Usage as an ECMAscript Module (e.g., within Svelte) ###
 
 ```
 <script>
@@ -67,11 +67,12 @@ Alternatively, you may access the global Variable `Device` directly.
 </script>
 ```
 
-### Usage in other Environments than Svelte ###
+### Usage as a CommonJS or AMD Module (or as a global Variable) ###
 
 Let's assume that you already "required" or "imported" (or simply loaded) the module according to your local environment. In that case, you may use it as follows:
 
 ```
+<script>
   console.log('this device is ' + (Device.isMobile ? '' : 'not') + ' mobile')
   
   switch (true) {
@@ -98,6 +99,7 @@ Let's assume that you already "required" or "imported" (or simply loaded) the mo
   Device.oncePointingAccuracyChanged((newAccuracy) => {
     console.log('PointingAccuracy has changed to "' + newAccuracy + '"')
   })
+</script>
 ```
 
 ### Examples ###
