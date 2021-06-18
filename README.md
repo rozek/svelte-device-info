@@ -126,25 +126,25 @@ This package offers a JavaScript `default` export, which may be imported as foll
 
 With such an import, the JavaScript API can be used as follows:
 
-* `Device.isMobile` - is `true` if the underlying device is a mobile one (or `false` otherwise)
-* `Device.isPhone` - is `true` if the underlying device is a smartphone (or `false` otherwise)
-* `Device.isTablet` - is `true` if the underlying device is a tablet (or `false` otherwise)<br>&nbsp;<br>
-* `Device.PointingAccuracy` - determines the current pointing accuracy of the underlying input device
-  * `none` - indicates the absence of any touch input device
-  * `fine` - indicates the presence of a high-resolution touch input device
-  * `coarse` - indicates the presence of a low-resolution touch input device<br>&nbsp;<br>
-* `Device.onPointingAccuracyChanged(callback)` - installs a `callback` function which is automatically invoked, whenever the device's `PointingAccuracy` has changed
-* `Device.oncePointingAccuracyChanged(callback)` - installs a `callback` function which is automatically invoked *once*, when the device's PointingAccuracy has changed
-* `Device.offPointingAccuracyChanged(callback)` - uninstalls a previously installed `callback` function<br>&nbsp;<br>
-* `Device.observesPointingAccuracy` - is `true` while there is at least one `callback` function observing the current `PointingAccuracy` (or `false` otherwise)
+* **`Device.isMobile`** - is `true` if the underlying device is a mobile one (or `false` otherwise)
+* **`Device.isPhone`** - is `true` if the underlying device is a smartphone (or `false` otherwise)
+* **`Device.isTablet`** - is `true` if the underlying device is a tablet (or `false` otherwise)<br>&nbsp;<br>
+* **`Device.PointingAccuracy`** - determines the current pointing accuracy of the underlying input device
+  * **`none`** - indicates the absence of any touch input device
+  * **`fine`** - indicates the presence of a high-resolution touch input device
+  * **`coarse`** - indicates the presence of a low-resolution touch input device<br>&nbsp;<br>
+* **`Device.onPointingAccuracyChanged(callback)`** - installs a `callback` function which is automatically invoked, whenever the device's `PointingAccuracy` has changed
+* **`Device.oncePointingAccuracyChanged(callback)`** - installs a `callback` function which is automatically invoked *once*, when the device's PointingAccuracy has changed
+* **`Device.offPointingAccuracyChanged(callback)`** - uninstalls a previously installed `callback` function<br>&nbsp;<br>
+* **`Device.observesPointingAccuracy`** - is `true` while there is at least one `callback` function observing the current `PointingAccuracy` (or `false` otherwise)
 
 #### CSS Classes ####
 
 The following CSS classes are added to `document.body` depending on the current `PoiningAccuracy`
 
-* `noPointer` - indicates the absence of any touch input device
-* `finePointer` - indicates the presence of a high-resolution touch input device
-* `coarsePointer` - indicates the presence of a low-resolution touch input device
+* **`noPointer`** - indicates the absence of any touch input device
+* **`finePointer`** - indicates the presence of a high-resolution touch input device
+* **`coarsePointer`** - indicates the presence of a low-resolution touch input device
 
 ### Build Instructions ###
 
