@@ -8,6 +8,7 @@
     "require": "./dist/svelte-device-info.js",
     "import": "./dist/svelte-device-info.esm.js"
   },
+  "types": "./dist/svelte-device-info.d.ts",
   "scripts": {
     "build": "rimraf dist && tsc && rollup -c rollup.config.js && mv src/*.d.ts dist && rm src/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
