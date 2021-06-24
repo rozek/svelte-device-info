@@ -6,7 +6,7 @@ informs about a device's form factor and pointing accuracy (not only in Svelte)
 
 Note: Microsoft Internet Explorer and Microsoft Edge (classic) are NOT supported
 
-### Installation ###
+## Installation ##
 
 `svelte-device-info` may be used as an ESM, CommonJS or AMD module or from a global variable.
 
@@ -22,7 +22,7 @@ or load the plain script file directly
 <script src="https://unpkg.com/svelte-device-info"></script>
 ```
 
-### Access ###
+## Access ##
 
 How to access the package depends on the type of module you prefer
 
@@ -32,7 +32,7 @@ How to access the package depends on the type of module you prefer
 
 Alternatively, you may access the global Variable `Device` directly.
 
-### Usage as an ECMAscript Module (e.g., within Svelte) ###
+## Usage as an ECMAscript Module (e.g., within Svelte) ##
 
 ```
 <script>
@@ -67,7 +67,7 @@ Alternatively, you may access the global Variable `Device` directly.
 </script>
 ```
 
-### Usage as a CommonJS or AMD Module (or as a global Variable) ###
+## Usage as a CommonJS or AMD Module (or as a global Variable) ##
 
 Let's assume that you already "required" or "imported" (or simply loaded) the module according to your local environment. In that case, you may use it as follows:
 
@@ -100,14 +100,14 @@ Let's assume that you already "required" or "imported" (or simply loaded) the mo
   })
 ```
 
-### Examples ###
+## Examples ##
 
 All examples are available on the Svelte REPL - feel free to play with them!
 
 * [Device.isXXX](https://svelte.dev/repl/f8227376829d46e9bedeb9d9a1dacdb2) - DeviceIsMobile, DeviceIsPhone, DeviceIsTablet
 * [Device.PointingAccuracy](https://svelte.dev/repl/24578e134a68443da9dc84adf3ae729b) - including observation at run-time
 
-### Background Information ###
+## Background Information ##
 
 This package determines a few often needed details of the underlying device running a given JavaScript application:
 
@@ -118,7 +118,7 @@ In addition, the package informs the application about any change in touch input
 
 The package's finding may either be retrieved using JavaScript or by styling a few CSS classes which are added to or removed from the document body depending on the current PointingAccuracy.
 
-#### JavaScript API ####
+### JavaScript API ###
 
 This package offers a JavaScript `default` export, which may be imported as follows
 
@@ -138,7 +138,7 @@ With such an import, the JavaScript API can be used as follows:
 * **`Device.offPointingAccuracyChanged(callback)`** - uninstalls a previously installed `callback` function<br>&nbsp;<br>
 * **`Device.observesPointingAccuracy`** - is `true` while there is at least one `callback` function observing the current `PointingAccuracy` (or `false` otherwise)
 
-#### CSS Classes ####
+### CSS Classes ###
 
 The following CSS classes are added to `document.body` depending on the current `PoiningAccuracy`
 
@@ -146,7 +146,7 @@ The following CSS classes are added to `document.body` depending on the current 
 * **`finePointer`** - indicates the presence of a high-resolution touch input device
 * **`coarsePointer`** - indicates the presence of a low-resolution touch input device
 
-### Build Instructions ###
+## Build Instructions ##
 
 You may easily build this package yourself.
 
@@ -156,3 +156,7 @@ Just install [NPM](https://docs.npmjs.com/) according to the instructions for yo
 2. open a shell and navigate to the root directory of this repository
 3. run `npm install` in order to install the complete build environment
 4. execute `npm run build` to create a new build
+
+## License ##
+
+[MIT License](LICENSE.md)
