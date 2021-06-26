@@ -30,7 +30,7 @@ How to access the package depends on the type of module you prefer
 * CommonJS: `const Device = require('svelte-device-info')`
 * AMD: `require(['svelte-device-info'], (Device) => {...})`
 
-Alternatively, you may access the global Variable `Device` directly.
+Alternatively, you may access the global variable `Device` directly.
 
 ## Usage as an ECMAscript Module (e.g., within Svelte) ##
 
