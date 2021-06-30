@@ -4,6 +4,7 @@
   "description": "informs about a device's form factor and pointing accuracy",
   "main": "./dist/svelte-device-info.js",
   "module": "./dist/svelte-device-info.esm.js",
+  "svelte": "./dist/svelte-device-info.esm.js",
   "exports": {
     "require": "./dist/svelte-device-info.js",
     "import": "./dist/svelte-device-info.esm.js"
