@@ -32,7 +32,46 @@ How to access the package depends on the type of module you prefer
 
 Alternatively, you may access the global variable `Device` directly.
 
-## Usage as an ECMAscript Module (e.g., within Svelte) ##
+## Usage within Svelte ##
+
+For Svelte it is recommended to import the package in a module context:
+
+```
+<script context="module">
+  import Device from 'svelte-device-info'
+</script>
+
+<script>
+  console.log('this device is ' + (Device.isMobile ? '' : 'not') + ' mobile')
+  
+  switch (true) {
+    case Device.isPhone:  console.log('this device is a smartphone'); break
+    case Device.isTablet: console.log('this device is a tablet');     break
+    default:              console.log('this device is neither a smartphone nor a tablet')
+  }
+  
+  switch (Device.PointingAccuracy) {
+    case 'none':   console.log('this device does not support any touch input'); break
+    case 'fine':   console.log('this device has a high-resolution touch input'); break
+    case 'coarse': console.log('this device has a low-resolution touch input')
+  }
+  
+/**** convertibles may change their PointingAccuracy at any time! ****/
+  
+  let PointingAccuracyObserver = function (newAccuracy) {
+    console.log('this device\'s PointingAccuracy is now "' + newAccuracy + '"')
+  }
+  
+  Device.onPointingAccuracyChanged(PointingAccuracyObserver) // may run multiple times
+  Device.offPointingAccuracyChanged(PointingAccuracyObserver)   // deregisters handler
+
+  Device.oncePointingAccuracyChanged((newAccuracy) => {
+    console.log('PointingAccuracy has changed to "' + newAccuracy + '"')
+  })
+</script>
+```
+
+## Usage as an ECMAscript Module ##
 
 ```
 <script>
