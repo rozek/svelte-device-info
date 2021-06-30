@@ -1,4 +1,3 @@
-/**** DeviceIsMobile ****/
 /**** determine presence and accuracy of primary pointing device ****/
 declare type PointingAccuracy = 'none' | 'fine' | 'coarse';
 /**** onPointingAccuracyChanged ****/
