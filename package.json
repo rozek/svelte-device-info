@@ -2,16 +2,20 @@
   "name": "svelte-device-info",
   "version": "0.1.13",
   "description": "informs about a device's form factor and pointing accuracy",
+  "type": "module",
   "main": "./dist/svelte-device-info.js",
   "module": "./dist/svelte-device-info.esm.js",
-  "svelte": "./dist/svelte-device-info.svelte.js",
+  "svelte": "./dist/svelte-device-info.esm.js",
   "exports": {
-    "require": "./dist/svelte-device-info.js",
-    "import": "./dist/svelte-device-info.esm.js"
+    ".": {
+      "require": "./dist/svelte-device-info.js",
+      "import": "./dist/svelte-device-info.esm.js"
+    },
+    "./package.json":"./package.json"
   },
   "types": "./dist/svelte-device-info.d.ts",
   "scripts": {
-    "build": "rimraf dist && tsc && rollup -c rollup.config.js && mv src/*.d.ts dist && mv src/*.js ./dist/svelte-device-info.svelte.js",
+    "build": "rimraf dist && rollup -c rollup.config.js && tsc && mv src/*.d.ts dist && rm src/*.js*",
     "agadoo": "agadoo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -33,8 +37,6 @@
   },
   "homepage": "https://github.com/rozek/svelte-device-info#readme",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^19.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-typescript": "^8.2.1",
     "agadoo": "^2.0.0",
     "rimraf": "^3.0.2",
