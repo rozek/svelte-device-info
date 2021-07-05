@@ -1,6 +1,6 @@
 {
   "name": "svelte-device-info",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "informs about a device's form factor and pointing accuracy",
   "type": "module",
   "main": "./dist/svelte-device-info.js",
@@ -11,7 +11,7 @@
       "require": "./dist/svelte-device-info.js",
       "import": "./dist/svelte-device-info.esm.js"
     },
-    "./package.json":"./package.json"
+    "./package.json": "./package.json"
   },
   "types": "./dist/svelte-device-info.d.ts",
   "scripts": {
