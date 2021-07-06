@@ -196,6 +196,8 @@ Just install [NPM](https://docs.npmjs.com/) according to the instructions for yo
 3. run `npm install` in order to install the complete build environment
 4. execute `npm run build` to create a new build
 
+You may also look into the author's [build-configuration-study](https://github.com/rozek/build-configuration-study) for a general description of his build environment.
+
 ## License ##
 
 [MIT License](LICENSE.md)
