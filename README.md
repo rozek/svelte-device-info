@@ -34,7 +34,7 @@ Alternatively, you may access the global variable `Device` directly.
 
 ## Usage within Svelte ##
 
-For Svelte it is recommended to import the package in a module context:
+For Svelte, it is recommended to import the package in a module context:
 
 ```
 <script context="module">
