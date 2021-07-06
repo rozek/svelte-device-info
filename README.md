@@ -32,6 +32,8 @@ How to access the package depends on the type of module you prefer
 
 Alternatively, you may access the global variable `Device` directly.
 
+Note for ECMAScript module users: all module functions and values are exported individually, thus allowing your bundler to perform some "tree-shaking" in order to include actually used functions or values (together with their dependencies) only.
+
 ## Usage within Svelte ##
 
 For Svelte, it is recommended to import the package in a module context:
