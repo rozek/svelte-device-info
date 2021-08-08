@@ -6,7 +6,7 @@ informs about a device's form factor and pointing accuracy (not only in Svelte)
 
 Note: Microsoft Internet Explorer and Microsoft Edge (classic) are NOT supported
 
-> Just a small note: if you like this module and plan to use it, consider "starring" this repository (you will find the "Star" button on the top right of this page), such that I know which of my repositories to take most care of.
+> Just a small note: if you like this module and plan to use it, consider "starring" this repository (you will find the "Star" button on the top right of this page), so that I know which of my repositories to take most care of.
 
 ## Installation ##
 
