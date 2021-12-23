@@ -31,6 +31,21 @@
     }
   }
 
+/**** DeviceCanHover (is set together with "DevicePointingAccuracy") ****/
+
+  function DeviceCanHover ():boolean {
+    if (memoized.DevicePointingAccuracy == null) {
+      updateDevicePointingAccuracy()
+
+      if (! DocumentIsReady() && ! memoized.waitingForLoaded) {
+        memoized.waitingForLoaded = true
+        window.addEventListener('DOMContentLoaded', updateDevicePointingAccuracy)
+                // after document is loaded, classes will be applied as foreseen
+      }
+    }
+    return memoized.DeviceCanHover                  // may change while running!
+  }
+
 /**** DevicePointingAccuracy ****/
 // Internet Explorer and MS/Edge are NOT supported
 
@@ -136,7 +151,11 @@
     return memoized.DevicePointingAccuracy          // may change while running!
   }
 
+/**** updateDevicePointingAccuracy ****/
+
   function updateDevicePointingAccuracy ():void {
+    memoized.DeviceCanHover = MediaQuery('(hover:hover)')
+
     let updatedPointingAccuracy:PointingAccuracy = 'fine'
     switch (true) {
       case MediaQuery('(pointer:none)'):     updatedPointingAccuracy = 'none';   break
@@ -271,8 +290,6 @@
     }
   }
 
-
-
   export default {
     get isMobile () { return DeviceIsMobile() },
     get isPhone ()  { return DeviceIsPhone() },
@@ -282,6 +299,7 @@
     rewriteMediaQueriesOnLegacyTouchDevices,
 
     get PointingAccuracy () { return DevicePointingAccuracy() },
+    get canHover ()         { return DeviceCanHover() },
 
     onPointingAccuracyChanged,
     oncePointingAccuracyChanged,
