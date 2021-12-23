@@ -14,6 +14,7 @@ declare const _default: {
     readonly isLegacyTouchDevice: boolean;
     rewriteMediaQueriesOnLegacyTouchDevices: typeof rewriteMediaQueriesOnLegacyTouchDevices;
     readonly PointingAccuracy: PointingAccuracy;
+    readonly canHover: boolean;
     onPointingAccuracyChanged: typeof onPointingAccuracyChanged;
     oncePointingAccuracyChanged: typeof oncePointingAccuracyChanged;
     offPointingAccuracyChanged: typeof offPointingAccuracyChanged;

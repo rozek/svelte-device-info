@@ -24,6 +24,18 @@ function DeviceIsPhone() {
         return false;
     }
 }
+/**** DeviceCanHover (is set together with "DevicePointingAccuracy") ****/
+function DeviceCanHover() {
+    if (memoized.DevicePointingAccuracy == null) {
+        updateDevicePointingAccuracy();
+        if (!DocumentIsReady() && !memoized.waitingForLoaded) {
+            memoized.waitingForLoaded = true;
+            window.addEventListener('DOMContentLoaded', updateDevicePointingAccuracy);
+            // after document is loaded, classes will be applied as foreseen
+        }
+    }
+    return memoized.DeviceCanHover; // may change while running!
+}
 /**** DevicePointingAccuracy ****/
 // Internet Explorer and MS/Edge are NOT supported
 function MediaQuery(Query) {
@@ -103,7 +115,9 @@ function DevicePointingAccuracy() {
     }
     return memoized.DevicePointingAccuracy; // may change while running!
 }
+/**** updateDevicePointingAccuracy ****/
 function updateDevicePointingAccuracy() {
+    memoized.DeviceCanHover = MediaQuery('(hover:hover)');
     var updatedPointingAccuracy = 'fine';
     switch (true) {
         case MediaQuery('(pointer:none)'):
@@ -225,6 +239,7 @@ var svelteDeviceInfo = {
     get isLegacyTouchDevice() { return AppRunsOnLegacyTouchDevice(); },
     rewriteMediaQueriesOnLegacyTouchDevices: rewriteMediaQueriesOnLegacyTouchDevices,
     get PointingAccuracy() { return DevicePointingAccuracy(); },
+    get canHover() { return DeviceCanHover(); },
     onPointingAccuracyChanged: onPointingAccuracyChanged,
     oncePointingAccuracyChanged: oncePointingAccuracyChanged,
     offPointingAccuracyChanged: offPointingAccuracyChanged,
