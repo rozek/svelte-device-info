@@ -121,6 +121,7 @@ Let's assume that you already "required" or "imported" (or simply loaded) the mo
 All examples are available on the Svelte REPL - feel free to play with them!
 
 * [Device.isXXX](https://svelte.dev/repl/f8227376829d46e9bedeb9d9a1dacdb2) - DeviceIsMobile, DeviceIsPhone, DeviceIsTablet
+* [Device.canHover](https://svelte.dev/repl/8f3cf8e46d8346a2a0b776ef189d63bf) - including observation at run-time
 * [Device.PointingAccuracy](https://svelte.dev/repl/24578e134a68443da9dc84adf3ae729b) - including observation at run-time
 
 ## Background Information ##
