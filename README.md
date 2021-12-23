@@ -136,7 +136,10 @@ With such an import, the JavaScript API can be used as follows:
 
 * **`Device.isMobile`** - is `true` if the underlying device is a mobile one (or `false` otherwise)
 * **`Device.isPhone`** - is `true` if the underlying device is a smartphone (or `false` otherwise)
-* **`Device.isTablet`** - is `true` if the underlying device is a tablet (or `false` otherwise)<br>&nbsp;<br>
+* **`Device.isTablet`** - is `true` if the underlying device is a tablet (or `false` otherwise)
+
+> Nota bene: the reported device factor may be wrong for mobile devices if browsers have been configured to act like desktop browsers!
+
 * **`Device.PointingAccuracy`** - determines the current pointing accuracy of the underlying input device
   * **`none`** - indicates the absence of any touch input device
   * **`fine`** - indicates the presence of a high-resolution touch input device
