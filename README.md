@@ -53,7 +53,11 @@ For Svelte, it is recommended to import the package in a module context:
     case Device.isTablet: console.log('this device is a tablet');     break
     default:              console.log('this device is neither a smartphone nor a tablet')
   }
-  
+    
+  console.log('the primary pointing device can' + (
+    Device.canHover ? '' : 'not'
+  ) + ' "hover" over elements')
+
   switch (Device.PointingAccuracy) {
     case 'none':   console.log('this device does not support any touch input'); break
     case 'fine':   console.log('this device has a high-resolution touch input'); break
@@ -87,6 +91,10 @@ Let's assume that you already "required" or "imported" (or simply loaded) the mo
     case Device.isTablet: console.log('this device is a tablet');     break
     default:              console.log('this device is neither a smartphone nor a tablet')
   }
+  
+  console.log('the primary pointing device can' + (
+    Device.canHover ? '' : 'not'
+  ) + ' "hover" over elements')
   
   switch (Device.PointingAccuracy) {
     case 'none':   console.log('this device does not support any touch input'); break
@@ -140,6 +148,7 @@ With such an import, the JavaScript API can be used as follows:
 
 > Nota bene: the reported device factor may be wrong for mobile devices if their browsers have been configured to act like desktop browsers!
 
+* **`Device.canHover`** - is `true` if the primary pointing device can "hover" over elements (or `false` otherwise)<br>&nbsp;<br>
 * **`Device.PointingAccuracy`** - determines the current pointing accuracy of the underlying input device
   * **`none`** - indicates the absence of any touch input device
   * **`fine`** - indicates the presence of a high-resolution touch input device
