@@ -20,7 +20,7 @@ npm install svelte-device-info
 
 or load the plain script file directly
 
-```
+```html
 <script src="https://unpkg.com/svelte-device-info"></script>
 ```
 
@@ -40,7 +40,7 @@ Note for ECMAScript module users: all module functions and values are exported i
 
 For Svelte, it is recommended to import the package in a module context:
 
-```
+```html
 <script context="module">
   import Device from 'svelte-device-info'
 </script>
@@ -83,7 +83,7 @@ For Svelte, it is recommended to import the package in a module context:
 
 Let's assume that you already "required" or "imported" (or simply loaded) the module according to your local environment. In that case, you may use it as follows:
 
-```
+```javascript
   console.log('this device is ' + (Device.isMobile ? '' : 'not') + ' mobile')
   
   switch (true) {
