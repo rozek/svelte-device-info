@@ -5,7 +5,7 @@ var memoized = {};
 /**** DeviceIsMobile ****/
 function DeviceIsMobile() {
     // @ts-ignore TS2551 yes, I know that "navigator.userAgentData" is experimental
-    if ('mobile' in navigator.userAgentData) {
+    if ((navigator.userAgentData != null) && ('mobile' in navigator.userAgentData)) {
         // @ts-ignore TS2551 yes, I know that "navigator.userAgentData" is experimental
         return navigator.userAgentData.mobile;
     }
