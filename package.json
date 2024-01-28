@@ -9,7 +9,8 @@
   "exports": {
     ".": {
       "require": "./dist/svelte-device-info.js",
-      "import": "./dist/svelte-device-info.esm.js"
+      "import": "./dist/svelte-device-info.esm.js",
+      "svelte": "./dist/svelte-device-info.esm.js"
     },
     "./package.json": "./package.json"
   },
@@ -43,5 +44,8 @@
     "rollup": "^2.50.6",
     "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
   }
 }
