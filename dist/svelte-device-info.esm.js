@@ -246,5 +246,5 @@ var svelteDeviceInfo = {
     get observesPointingAccuracy() { return (memoized.AccuracyPoller != null); }
 };
 
-export default svelteDeviceInfo;
+export { svelteDeviceInfo as default };
 //# sourceMappingURL=svelte-device-info.esm.js.map
