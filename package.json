@@ -1,6 +1,6 @@
 {
   "name": "svelte-device-info",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "informs about a device's form factor and pointing accuracy",
   "type": "module",
   "main": "./dist/svelte-device-info.js",
@@ -16,7 +16,7 @@
   },
   "types": "./dist/svelte-device-info.d.ts",
   "scripts": {
-    "build": "rimraf dist && rollup -c rollup.config.js && tsc && mv src/*.d.ts dist && rm src/*.js*",
+    "build": "rimraf dist && rollup -c rollup.config.js && tsc && mv src/*.d.ts dist && rm src/*.js* && rm -rf dist/src",
     "agadoo": "agadoo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
