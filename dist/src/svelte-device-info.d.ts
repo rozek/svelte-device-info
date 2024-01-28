@@ -1,5 +1,4 @@
-declare function rewriteMediaQueriesOnLegacyTouchDevices(): void;
-/**** determine presence and accuracy of primary pointing device ****/
+/**** DevicePointingAccuracy ****/
 type PointingAccuracy = 'none' | 'fine' | 'coarse';
 /**** onPointingAccuracyChanged ****/
 declare function onPointingAccuracyChanged(Handler: Function): void;
@@ -7,6 +6,7 @@ declare function onPointingAccuracyChanged(Handler: Function): void;
 declare function oncePointingAccuracyChanged(Handler: Function): void;
 /**** offPointingAccuracyChanged ****/
 declare function offPointingAccuracyChanged(Handler: Function): void;
+declare function rewriteMediaQueriesOnLegacyTouchDevices(): void;
 declare const _default: {
     readonly isMobile: boolean;
     readonly isPhone: boolean;
