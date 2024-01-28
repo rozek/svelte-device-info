@@ -7,8 +7,12 @@
 /**** DeviceIsMobile ****/
 
   function DeviceIsMobile ():boolean {
+    if (
 // @ts-ignore TS2551 yes, I know that "navigator.userAgentData" is experimental
-    if ((navigator.userAgentData != null) && ('mobile' in navigator.userAgentData)) {
+      (typeof navigator.userAgentData === 'object') &&    // required for Safari
+// @ts-ignore TS2551 yes, I know that "navigator.userAgentData" is experimental
+      ('mobile' in navigator.userAgentData)
+    ) {
 // @ts-ignore TS2551 yes, I know that "navigator.userAgentData" is experimental
       return navigator.userAgentData.mobile
     } else {
