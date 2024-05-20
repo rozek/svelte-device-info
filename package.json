@@ -6,15 +6,16 @@
   "main": "./dist/svelte-device-info.js",
   "module": "./dist/svelte-device-info.esm.js",
   "svelte": "./dist/svelte-device-info.esm.js",
+  "types": "./dist/svelte-device-info.d.ts",
   "exports": {
     ".": {
       "require": "./dist/svelte-device-info.js",
       "import": "./dist/svelte-device-info.esm.js",
-      "svelte": "./dist/svelte-device-info.esm.js"
+      "svelte": "./dist/svelte-device-info.esm.js",
+      "types": "./dist/svelte-device-info.d.ts"
     },
     "./package.json": "./package.json"
   },
-  "types": "./dist/svelte-device-info.d.ts",
   "scripts": {
     "build": "rimraf dist && rollup -c rollup.config.js && tsc && mv src/*.d.ts dist && rm src/*.js* && rm -rf dist/src",
     "agadoo": "agadoo",
