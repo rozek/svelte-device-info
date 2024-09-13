@@ -1,23 +1,24 @@
 {
   "name": "svelte-device-info",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "informs about a device's form factor and pointing accuracy",
-  "type": "module",
-  "main": "./dist/svelte-device-info.js",
+  "main":   "./dist/svelte-device-info.umd.js",
+  "browser":"./dist/svelte-device-info.umd.js",
   "module": "./dist/svelte-device-info.esm.js",
   "svelte": "./dist/svelte-device-info.esm.js",
-  "types": "./dist/svelte-device-info.d.ts",
+  "types":  "./dist/svelte-device-info.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/svelte-device-info.js",
+      "require":"./dist/svelte-device-info.umd.js",
+      "browser":"./dist/svelte-device-info.umd.js",
       "import": "./dist/svelte-device-info.esm.js",
       "svelte": "./dist/svelte-device-info.esm.js",
-      "types": "./dist/svelte-device-info.d.ts"
+      "types":  "./dist/svelte-device-info.d.ts"
     },
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "rimraf dist && rollup -c rollup.config.js && tsc && mv src/*.d.ts dist && rm src/*.js* && rm -rf dist/src",
+    "build": "rimraf dist && rollup -c rollup.config.js && tsc && mv src/*.d.ts dist && rm src/*.js* && rimraf dist/src",
     "agadoo": "agadoo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -39,11 +40,11 @@
   },
   "homepage": "https://github.com/rozek/svelte-device-info#readme",
   "devDependencies": {
+  	"@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^8.2.1",
     "agadoo": "^2.0.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.50.6",
-    "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.3.2"
   },
   "dependencies": {
